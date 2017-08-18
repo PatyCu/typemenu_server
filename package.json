@@ -11,6 +11,9 @@
     "type": "git",
     "url": "typemenu_server"
   },
+  "engines": {
+    "node": "8.3.0"
+  },
   "keywords": [
     "menus",
     "weekly",

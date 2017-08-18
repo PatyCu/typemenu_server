@@ -6,8 +6,16 @@ var io = require('socket.io')(http)
 
 app.use(bodyParser.json())
 
-app.use('/static', express.static(__dirname + '/build/static'))
-app.use(express.static(__dirname + '/website'))
+app.set('port', (process.env.PORT || 3005));
+
+app.use(express.static(__dirname + '/public'));
+
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+//app.use('/static', express.static(__dirname + '/build/static'))
+//app.use(express.static(__dirname + '/website'))
 
 app.post('/webhook', function (req, res) {
   const response = req.body.form_response
@@ -27,7 +35,8 @@ app.post('/webhook', function (req, res) {
 
 app.get('/', function (req, res) {
   //res.sendFile(__dirname + '/website/index.html')
-  console.log('get (slash))')
+  console.log('get (slash))');
+  response.render('pages/index');
 })
 
 app.get('*', function (req, res) {
@@ -39,6 +48,6 @@ io.on('connection', function (socket) {
   console.log('a user connected')
 })
 
-http.listen(3005, function () {
-  console.log('listening on *:3005')
-})
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
