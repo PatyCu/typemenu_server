@@ -34,6 +34,7 @@ app.post('/webhook', function (req, res) {
 */
 
 app.post('/webhook', function (req, res) {
+  console.log("webhook sent");
   const response = req.body;
   console.log("webhook response", response);
   res.status(200).end();
@@ -41,7 +42,7 @@ app.post('/webhook', function (req, res) {
 
 app.get('/', function (request, response) {
   //res.sendFile(__dirname + '/website/index.html')
-  console.log('get (slash))');
+  //console.log('get (slash))');
   //response.render('pages/index');
 })
 /*
