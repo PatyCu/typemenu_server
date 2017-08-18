@@ -1,10 +1,10 @@
 var express = require('express')
 var app = express()
-//var bodyParser = require('body-parser')
+var bodyParser = require('body-parser')
 //var http = require('http').Server(app)
 //var io = require('socket.io')(http)
 
-//app.use(bodyParser.json())
+app.use(bodyParser.json())
 
 app.set('port', (process.env.PORT || 3005));
 
@@ -35,8 +35,8 @@ app.post('/webhook', function (req, res) {
 
 app.post('/webhook', function (req, res) {
   console.log("webhook sent");
-  const response = req.body;
-  console.log("webhook response", req);
+  const response = req.body.form_response
+  console.log("webhook response", response);
   res.status(200).end();
 })
 
