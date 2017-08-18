@@ -1,0 +1,27 @@
+{
+  "name": "typemenu",
+  "version": "0.1.0",
+  "description": "Weekly menus management tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "typemenu_server"
+  },
+  "keywords": [
+    "menus",
+    "weekly",
+    "typeform",
+    "survey"
+  ],
+  "author": "PatyCu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  }
+}
