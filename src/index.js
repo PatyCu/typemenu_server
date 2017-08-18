@@ -6,12 +6,12 @@ var app = express()
 
 //app.use(bodyParser.json())
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 3005));
 
 app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
-app.set('views', __dirname + '/views');
+//app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 //app.use('/static', express.static(__dirname + '/build/static'))
@@ -36,7 +36,7 @@ app.post('/webhook', function (req, res) {
 app.get('/', function (request, response) {
   //res.sendFile(__dirname + '/website/index.html')
   console.log('get (slash))');
-  response.render('pages/index');
+  //response.render('pages/index');
 })
 /*
 io.on('connection', function (socket) {
