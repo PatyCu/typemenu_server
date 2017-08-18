@@ -35,7 +35,7 @@ app.post('/webhook', function (req, res) {
 
 app.post('/webhook', function (req, res) {
   console.log("webhook sent");
-  const response = req.body.form_response
+  const response = req.body.form_response.answers
   console.log("webhook response", response);
   res.status(200).end();
 })
