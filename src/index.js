@@ -36,7 +36,7 @@ app.post('/webhook', function (req, res) {
 app.post('/webhook', function (req, res) {
   const response = req.body.form_response;
   console.log("webhook response", response);
-}
+})
 
 app.get('/', function (request, response) {
   //res.sendFile(__dirname + '/website/index.html')
